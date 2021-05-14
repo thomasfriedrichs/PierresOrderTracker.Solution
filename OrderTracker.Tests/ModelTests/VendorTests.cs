@@ -67,18 +67,22 @@ namespace OrderTracker.Tests
       Assert.AreEqual(newVendor1, result);
     }
 
-    // [TestMethod]
-    // public void AddOrder_AssociatesOrderWithVendor_OrderList()
-    // {
-    //   string description = "desctription";
-    //   Order newOrder = new Order(description);
-    //   List<Order> newList = new List<Order> { newOrder };
-    //   string name = "name";
-    //   Vendor newVendor = new Vendor(name);
-    //   newVendor.AddOrder(newOrder);
-    //   List<Order> result = newVendor.Orders;
-    //   CollectionAssert.AreEqual(newList, result);
-    // }
+    [TestMethod]
+    public void AddOrder_AssociatesOrderWithVendor_OrderList()
+    {
+      string description = "desctription";
+      string name = "name";
+      int price = 1;
+      string date = "april 4th, 2021";
+      Order newOrder = new Order(name, description, price, date);
+      List<Order> newList = new List<Order> { newOrder };
+      string vendorDescription = "desctription";
+      string vendorName = "name";
+      Vendor newVendor = new Vendor(vendorName, vendorDescription);
+      newVendor.AddOrder(newOrder);
+      List<Order> result = newVendor.Orders;
+      CollectionAssert.AreEqual(newList, result);
+    }
 
   }
 }
