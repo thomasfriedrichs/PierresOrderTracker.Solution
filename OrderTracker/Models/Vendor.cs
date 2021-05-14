@@ -19,5 +19,10 @@ namespace OrderTracker.Models
       Id = _vendors.Count;
       Orders = new List<Order>{};
     }
+
+    public static void ClearAll()
+    {
+      _vendors.Clear();
+    }
   }
 }
