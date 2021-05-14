@@ -44,7 +44,7 @@ namespace OrderTracker.Tests
     public void GetAll_ReturnsAllVendorObjects_VendorList()
     {
       string description1 = "description1";
-      string description2 = "desciption";
+      string description2 = "desciption2";
       string name01 = "name1";
       string name02 = "name2";
       Vendor newVendor1 = new Vendor(name01, description1);
@@ -57,16 +57,28 @@ namespace OrderTracker.Tests
     [TestMethod]
     public void Find_ReturnsCorrectVendor_Vendor()
     {
-      string name01 = "Work";
-      string name02 = "School";
+      string name01 = "name1";
+      string name02 = "name2";
       string description1 = "description1";
-      string description2 = "desciption";
+      string description2 = "desciption2";
       Vendor newVendor1 = new Vendor(name01, description1);
       Vendor newVendor2 = new Vendor(name02, description2);
       Vendor result = Vendor.Find(1);
       Assert.AreEqual(newVendor1, result);
     }
 
+    [TestMethod]
+    public void AddOrder_AssociatesOrderWithVendor_OrderList()
+    {
+      string description = "desctription";
+      Order newOrder = new Order(description);
+      List<Order> newList = new List<Order> { newOrder };
+      string name = "name";
+      Vendor newVendor = new Vendor(name);
+      newVendor.AddOrder(newOrder);
+      List<Order> result = newVendor.Orders;
+      CollectionAssert.AreEqual(newList, result);
+    }
 
   }
 }
