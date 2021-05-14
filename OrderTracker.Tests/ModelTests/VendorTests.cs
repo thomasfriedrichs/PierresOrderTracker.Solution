@@ -34,10 +34,24 @@ namespace OrderTracker.Tests
     public void GetId_ReturnsVendorId_Int()
     {
       string description = "description";
-      string name = "Test Category";
+      string name = "Test Vendor";
       Vendor newVendor = new Vendor(name, description);
       int result = newVendor.Id;
       Assert.AreEqual(1, result);
+    }
+
+    [TestMethod]
+    public void GetAll_ReturnsAllVendorObjects_VendorList()
+    {
+      string description1 = "description1";
+      string description2 = "desciption";
+      string name01 = "name1";
+      string name02 = "name2";
+      Vendor newVendor1 = new Vendor(name01, description1);
+      Vendor newVendor2 = new Vendor(name02, description2);
+      List<Vendor> newList = new List<Vendor> { newVendor1, newVendor2 };
+      List<Vendor> result = Vendor.GetAll();
+      CollectionAssert.AreEqual(newList, result);
     }
 
   }
