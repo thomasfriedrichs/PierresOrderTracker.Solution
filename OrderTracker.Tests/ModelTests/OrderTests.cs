@@ -49,5 +49,17 @@ namespace OrderTracker.Tests
       int result = newOrder.Price;
       Assert.AreEqual(Price, result);
     }
+
+    [TestMethod]
+    public void GetDate_ReturnsDate_String()
+    {
+      string Title = "title";
+      string Description = "Description";
+      int Price = 1;
+      string Date = "april 4th, 2021";
+      Order newOrder = new Order(Title, Description, Price, Date);
+      string result = newOrder.Date;
+      Assert.AreEqual(Date, result);
+    }
   }
 }
