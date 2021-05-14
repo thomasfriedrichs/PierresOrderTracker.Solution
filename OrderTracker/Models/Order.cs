@@ -5,5 +5,6 @@ namespace OrderTracker.Models
   public class Order
   {
     public string Title;
+    
   }
 }
