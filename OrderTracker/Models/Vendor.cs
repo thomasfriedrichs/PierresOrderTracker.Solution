@@ -1,17 +1,21 @@
 using System.Collections.Generic;
 
-namespace Vendors.Models
+namespace OrderTracker.Models
 {
-  public class Category
+  public class Vendor
   {
     private static List<Vendor> _vendors = new List<Vendor> {};
+
+    public string Description { get; set; }
     public string Name { get; set; }
     public int Id { get; }
     public List<Order> Orders { get; set; }
 
-    public void Vendor(string vendorName)
+    public Vendor(string vendorName, string vendorDescription)
     {
+      Description = vendorDescription;
       Name = vendorName;
+      _vendors.Add(this);
       Id = _vendors.Count;
       Orders = new List<Order>{};
     }
