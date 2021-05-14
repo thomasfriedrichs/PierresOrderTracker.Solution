@@ -38,5 +38,16 @@ namespace OrderTracker.Tests
       string result = newOrder.Description;
       Assert.AreEqual(Description, result);
     }
+
+    [TestMethod]
+    public void GetPrice_ReturnsPrice_String()
+    {
+      string Title = "title";
+      string Description = "Description";
+      int Price = 1;
+      Order newOrder = new Order(Title, Description, Price, "10/10/21");
+      int result = newOrder.Price;
+      Assert.AreEqual(Price, result);
+    }
   }
 }
