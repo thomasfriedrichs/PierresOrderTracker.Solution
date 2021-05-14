@@ -88,5 +88,22 @@ namespace OrderTracker.Tests
       CollectionAssert.AreEqual(orderList, result);
     }
 
+    [TestMethod]
+    public void Find_ReturnsCorrectOrder_Order()
+    {
+      string name01 = "name1";
+      string name02 = "name2";
+      string description1 = "description1";
+      string description2 = "desciption2";
+      int Price1 = 1;
+      int Price2 = 2;
+      string Date1 = "april 4th, 2021";
+      string Date2 = "april 5th, 2021";
+      Order newOrder1 = new Order(name01, description1, Price1, Date1);
+      Order newOrder2 = new Order(name02, description2, Price2, Date2);
+      Order result = Order.Find(2);
+      Assert.AreEqual(newOrder2, result);
+    }
+
   }
 }

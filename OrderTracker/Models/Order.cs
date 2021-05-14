@@ -32,6 +32,11 @@ namespace OrderTracker.Models
       return _orders;
     }
 
+    public static Order Find(int searchId)
+    {
+      
+    }
+
 
   }
 }
