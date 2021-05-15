@@ -13,5 +13,15 @@ namespace ToDoList.Controllers
       return View(vendor);
     }
 
+    [HttpGet("/vendors/{vendorId}/items/{itemId}")]
+    public ActionResult Show(int vendorId, int itemId)
+    {
+      Item item = Item.Find(itemId);
+      Vendor vendor = Vendor.Find(vendorId);
+      Dictionary<string, object> vendorOrders = new Dictionary<string, object>();
+      vendorOrders.Add("item", item);
+      vendorOrders.Add("vendor", vendor);
+      return View(vendorOrders);
+    }
   }
 }
