@@ -3,10 +3,10 @@
   Layout = "Layout";
 }
 <h1>@Model["vendors"].VendorName</h1>
-@foreach (Order record in @Model["orders"])
+@foreach (Order order in @Model["orders"])
 {
-  <a href='/vendors/@Model["vendors"].Id/orders/@Order.Id'><button class="btn btn-outline-info btn-sm">@Order.OrderTitle</button></a>
+  <a href='/vendors/@Model["vendor"].Id/orders/@order.Id'><button class="btn btn-outline-info btn-sm">@order.Title</button></a>
 }
 
-<p><a href='/vendors/@Model["vendors"].Id/orders/new'>Add a new order</a></p>
+<p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new order</a></p>
 <p><a href='/vendors'>Return to vendors page</a></p>
