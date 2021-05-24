@@ -5,8 +5,8 @@
 <h1>@Model["vendors"].Name</h1>
 @foreach (Order order in @Model["orders"])
 {
-  <a href='/vendors/@Model["vendor"].Id/orders/@order.Id'><button class="btn btn-outline-info btn-sm">@order.Title</button></a>
+  <a href='/vendors/@Model["vendors"].Id/orders/@order.Id'><button class="btn btn-outline-info btn-sm">@order.Title</button></a>
 }
 
-<p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new order</a></p>
+<p><a href='/vendors/@Model["vendors"].Id/orders/new'>Add a new order</a></p>
 <p><a href='/vendors'>Return to vendors page</a></p>
